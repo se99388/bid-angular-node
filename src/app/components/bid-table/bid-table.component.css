@@ -1,0 +1,16 @@
+table{
+    max-width: 100%;
+    overflow: auto;
+}
+
+.seqRow {
+    height: 100px;
+    overflow-y: auto;
+    word-break: break-all;
+}
+.seqIdRow{
+    height: 100px;
+    min-width: 250px;;
+    overflow-y: auto;
+    word-break: break-all;
+}

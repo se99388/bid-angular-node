@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>The customer is: {{data.customer}}</h1>
+<form mat-dialog-content class="matchForm" #formInfo="ngForm">
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Paste here your sequence" #seq="ngModel" [(ngModel)]="data.seq" rows="5" name="seq" required></textarea>
+  </mat-form-field>
+  <mat-error *ngIf="seq.errors?.required && seq.touched">Add your sequence</mat-error>
+  <mat-form-field>
+    <mat-select  #year="ngModel" matNativeControl placeholder="choose the relevant year" [(ngModel)]="data.year" name="year" required>
+      <mat-option [value]="2020">2020</mat-option>
+      <mat-option [value]="2019">2019</mat-option>
+      <mat-option [value]="2018">2018</mat-option>
+      <mat-option [value]="2017">2017</mat-option>
+      <mat-option [value]="2016">2016</mat-option>
+      <mat-option [value]="2015">2015</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-error *ngIf="year.errors?.required && year.touched">You have to choose a year</mat-error>
+
+  <mat-form-field>
+    <mat-select #cutoff="ngModel" matNativeControl placeholder="what is your cutoff?" [(ngModel)]="data.cutoff" name="cutoff" required>
+      <mat-option [value]="100">100%</mat-option>
+      <mat-option [value]="99">99%</mat-option>
+      <mat-option [value]="98">98%</mat-option>
+      <mat-option [value]="97">97%</mat-option>
+      <mat-option [value]="96">96%</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-error *ngIf="cutoff.errors?.required && cutoff.touched">You have to choose a cutoff</mat-error>
+
+</form>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="formInfo.form.invalid">Ok</button>
+</div>
+
+
+   
+
+

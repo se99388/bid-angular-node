@@ -1,0 +1,29 @@
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+<div id="bidBoard">
+    <div id="bidSearch">
+        <!-- <div>
+            <select [(ngModel)]="currentCustomer.customer" name="customer" required (change)="getCustomer()" placeholder="choose the relevant customer">
+                <option *ngFor="let c of customers" value="{{c.customer}}">{{c.customer}}</option>
+            </select>
+        </div> -->
+
+        <mat-form-field>
+            <mat-select [(ngModel)]="currentCustomer.customer" name="customer" required (selectionChange)="getCustomer()" placeholder="Choose the relevant customer">
+                <mat-option *ngFor="let c of customers" value="{{c.customer}}">{{c.customer}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="bidsData || allMatchSeqs">
+            <button class="customerButton" (click)="openDialog()">Get homolog</button>
+        </div>
+
+        <hr>
+    </div>
+    <div class="bidMain" >
+        <h5 *ngIf="bidsData?.length">The sequences number of {{bidsData[0].customer}} is: {{bidsData.length}} sequences </h5>
+        <app-bid-table *ngIf="bidsData?.length" [bidsDataOfTable]="bidsData"></app-bid-table>
+        <app-bid-match-table *ngIf="allMatchSeqs" [bidsDataOfTable]="allMatchSeqs"></app-bid-match-table>
+    </div>
+
+
+</div>

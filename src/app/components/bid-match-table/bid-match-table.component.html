@@ -1,0 +1,33 @@
+
+<div id="myTable">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer name</th>
+                    <th>Date</th>
+                    <th>Seq_ID</th>
+                    <th>Alignment</th>
+                    <th>Identity</th>
+                    <th>Score</th>
+                    <th>Sequence Length</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let BD of bidsDataOfTable">
+                    <td>{{BD.customerName}}</td>
+                    <td>{{BD.date}}</td>
+                    <td><div class="seqIdRow"><a href="file:///{{BD.location}}">{{BD.seqId }}</a></div></td>
+                    <td>
+                        <div class="seqRow">
+                            {{BD.alignmentMask}}
+                        </div>
+                    </td>
+                    <td>{{BD.identity | number:'1.0-2'}} %</td>
+                    <td>{{BD.score}}</td>
+                    <td>{{BD.sequenceLength}}</td>
+    
+    
+                </tr>
+            </tbody>
+        </table>
+    </div>

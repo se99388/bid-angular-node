@@ -1,0 +1,42 @@
+#bidBoard{
+    display: flex;
+    flex-direction: column;  
+
+}
+
+#bidBoard > *{ 
+    margin-top: 10px;
+}
+
+
+
+#bidSearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+h5{
+    background-color: yellow;
+    display: inline;
+    text-align: center;   
+}
+
+.customerButton {
+    border-radius: 10px;
+    background-color: #0099cc;
+    color: white;
+}
+select {
+    border-radius: 5px;
+    background-color: #d1e0e0;
+    border: none;
+    margin: 3px;
+}
+
+mat-form-field{
+    width: 300px;
+}
+

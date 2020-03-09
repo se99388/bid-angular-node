@@ -1,0 +1,4 @@
+.matchForm{
+    display: flex;
+    flex-direction: column;
+}

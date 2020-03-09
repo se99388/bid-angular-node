@@ -1,0 +1,8 @@
+<div class="header">
+        <div> <a routerLink="./home"><img src="../../../assets/img/logo hylabs40mm.jpg" width="100px"></a></div>
+        <div class="title"><h1>BID - sequences data</h1></div>
+        <div *ngIf="countBids">
+                 <p>Total sequences: {{countBids.bidCount}}</p> 
+                 <p>Last update: {{countBids.lastupdated | date : 'M/d/yy, h:mm a' }}</p> 
+                </div>
+</div>
