@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get("/seqAnalysis/:customer/:seq/:year/:cutoff",async (request,response)=>{
     try{
-        
         const allMatchSeq = await seqAnalysisLogic.findAllMatchSeq(request.params.customer, request.params.seq, request.params.year, request.params.cutoff);
 
         allMatchSeq.sort((matchSeq1, matchSeq2)=>{
